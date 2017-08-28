@@ -53,10 +53,10 @@ class Config:
             self.output_path = output_path
         else:
             self.output_path = "results/window/{:%Y%m%d_%H%M%S}/".format(datetime.now())
-        self.model_output = self.output_path + "model.weights"
-        self.eval_output = self.output_path + "results.txt"
-        self.log_output = self.output_path + "log"
-        self.conll_output = self.output_path + "window_predictions.conll"
+            self.model_output = self.output_path + "model.weights"
+            self.eval_output = self.output_path + "results.txt"
+            self.log_output = self.output_path + "log"
+            self.conll_output = self.output_path + "window_predictions.conll"
 
 
 def make_windowed_data(data, start, end, window_size = 1):
