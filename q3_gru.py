@@ -155,7 +155,8 @@ class SequencePredictor(Model):
         Vars = [i[1] for i in grads_and_vars]
         
         self.grad_norm = tf.global_norm(grads)
-        #global_norm = sqrt(sum([l2norm(t)**2 for t in t_list]))
+        #############global_norm = sqrt(sum([l2norm(t)**2 for t in t_list]))
+        #############t_list[i] * clip_norm / max(global_norm, clip_norm)
         if self.config.clip_gradients is True:
             grads,global_norm = tf.clip_by_global_norm(grads,self.config.max_grad_norm)    
         
